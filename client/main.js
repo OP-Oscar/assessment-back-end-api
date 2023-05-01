@@ -136,7 +136,7 @@ function createLetterCard(letter) {
     letterCard.innerHTML = `
     <br>
     <div id='letter-${letter.id}'>
-    <p> ${referencer[letter.id]} </P 
+    <p class='pTagAdjust'> ${referencer[letter.id]} </P> 
     <p class="letterContent" id="${letter.id}">
     <textarea id="letterContent${letter.id}" cols="60" rows="4">${letter.description}</textarea>
     </p>

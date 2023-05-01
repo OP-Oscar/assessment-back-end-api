@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Sigmar&display=swap');
 
+
+
 html{
   font-family: fantasy, cursive; 
 }
@@ -180,7 +182,17 @@ p{
 
   }
 
+.pTagAdjust{
+  width: 126px;
+  }
+
   #apiDiv{
     background-color: lightsteelblue;
     text-align: center;
+  }
+
+  .aligment2Center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
