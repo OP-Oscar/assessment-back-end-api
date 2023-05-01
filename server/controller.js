@@ -38,11 +38,8 @@ module.exports = {
 
     //module to remove house from DB
     deleteLetter : (req,res) => {
-        console.log(req.params)
         let {letter_id} = req.params; //=> variable getting request id
-        console.log(`letter id being sent from front end ${letter_id}`);
         const allLetters = db; //=> variable getting copy of DB
-
         
         //using findIndex method with callback to find correct letter
         let index = allLetters.findIndex( ele => ele.id === +letter_id);
@@ -50,7 +47,7 @@ module.exports = {
         if(index != -1){ // => if value is found then remove it
             db.splice(index,1);
         }
-        else console.log(typeof letter_id)
+        else console.log('ID not found')
 
         res.status(200).send(allLetters);
     },
@@ -58,7 +55,7 @@ module.exports = {
     createLetter: (req, res) => {
 
         let {id, description} = req.body
-                
+
         let newletter = {
             id,
             description
@@ -72,11 +69,11 @@ module.exports = {
         // module to update letter in database
         updateLetter : (req, res) => {
             const {letter_id} = req.params; // => variable getting request id
-            let {type} = req.body // => capturing plus or minus
+            let {letter_description} = req.body // => capturing plus or minus => need to get the new description instead
     
-            let index = db.findIndex( ele => +ele.id === letter_id); // => obtaining index
+            let index = db.findIndex( ele => +ele.id === +letter_id); // => obtaining index
     
-            console.log(`found ${type} update request to letter ${letter_id}`)
+            console.log(`found ${letter_description} request to letter ${letter_id}`)
     
             res.status(200).send(db)
         }
