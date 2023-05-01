@@ -71,7 +71,6 @@ const getAllLetters = () => axios.get(baseURL).then(letterCallback).catch(errCal
 const createLetter = body => axios.post(baseURL, body).then(letterCallback).catch(errCallback)
 const deleteLetter = (id) => axios.delete(`${baseURL}/${id}`).then(letterCallback).catch(errCallback)
 // const updateLetter = (id,type) => axios.put(`${baseURL}/${id}`, {type}).then(letterCallback).catch(errCallback)
-// const getPokemon = () => axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((res)=>"")
 
 // front end list drop dop
 const helpList = document.getElementById("list")
@@ -135,11 +134,15 @@ function createLetterCard(letter) {
     }
 
     letterCard.innerHTML = `
+    <br>
+    <div id='letter-${letter.id}'>
     <p> ${referencer[letter.id]} </P 
     <p class="letterContent" id="${letter.id}">
     <textarea id="letterContent${letter.id}" cols="60" rows="4">${letter.description}</textarea>
     </p>
     <button onclick="deleteLetter(${letter.id})">delete</button>
+    </div>
+    <br>
     `
 
     letterContainer.appendChild(letterCard)
@@ -171,21 +174,6 @@ function displayLetters(arr) {
 
 let searchBtn = document.getElementById('pokiSearch')
 let query = document.querySelector('#pokiInput')
-
-// // creating pokemon images
-// function createPokemon(img) {
-//     console.log('hello....')
-//     const pokemonSpot = document.querySelector('#pokemonSpot');
-//     console.log(`the value of img within createpoke is: ${img}`);
-//     if(img.toLowerCase() === "pikachu"){
-//         const pokeImg = document.createElement("/client/images/detective-pikachu.gif")
-//         pokeImg.src =img
-//         pokemonSpot.appendChild(pokeImg)
-//     }else{
-//     const pokeImg = document.createElement('img')
-//     pokeImg.src =img
-//     pokemonSpot.appendChild(pokeImg)
-// }};
 
 const submitHandler = (event) => {
     event.preventDefault()
