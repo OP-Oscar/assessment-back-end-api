@@ -2,9 +2,105 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+    <h1>OP's Assessment Page</h1>
+    <br>
+    
+    <div style="border: 1px solid green;">
+      <button id="complimentButton">Get a compliment</button>
+      <br>
+      <button id="fortuneButton">Get a fortune</button>
+      <br>
+    </div>
+    <br>
+
+    <div id="mainDiv" style="border: 1px solid black; display:none;">
+
+      <div id="smartDef" style="border: 1px solid yellow;">
+        <p>Now that you've gotten a complimentary compliment and fortune, let's plan for the future together! To plan for your future success consider creating a SMART plan. The SMART accronym is an outline which you can follow to set strong goals for yourself. Click the letters below to learn about the SMART accronym.</p>
+      </div>
+      <br>
+
+      <div id="smartcards" border: 1px solid green;">
+        <div class="scene scene--card">
+          <div class="card">
+            <div class="card__face card__face--front">S</div>
+            <div class="card__face card__face--back"><br>Specific:<br><br> Goal should be well defined, clear, and unambiguous</div>
+          </div>
+          <!-- <div class="center">
+            <button id="plusBtnS" value="+S">+</button>
+          </div> -->
+        </div>
+
+        <div class="scene scene--card">
+          <div class="card">
+            <div class="card__face card__face--front">M</div>
+            <div class="card__face card__face--back"><br>Measurable:<br><br>Goal should have specific measurable criteria demonstrating progress</div>
+          </div>
+          <!-- <div class="center">
+            <button id="plusBtnM">+</button>
+          </div> -->
+        </div>
+
+        <div class="scene scene--card">
+          <div class="card">
+            <div class="card__face card__face--front">A</div>
+            <div class="card__face card__face--back"><br>Attainable:<br><br>Goal should not be impossible to achieve</div>
+          </div>
+          <!-- <div class="center">
+            <button id="plusBtnA">+</button>
+          </div> -->
+        </div>
+
+        <div class="scene scene--card">
+          <div class="card">
+            <div class="card__face card__face--front">R</div>
+            <div class="card__face card__face--back"><br>Relevant:<br> <br>Goal should be relevant to what you are aiming to improve or accomplish</div>
+          </div>
+          <!-- <div class="center">
+            <button id="plusBtnR">+</button>
+          </div> -->
+        </div>
+
+        <div class="scene scene--card" >
+          <div class="card">
+            <div class="card__face card__face--front">T</div>
+            <div class="card__face card__face--back"><br>Time-Bound:<br><br>Goal should have a clearly defined time line</div>
+          </div>
+          <!-- <div class="center">
+            <button id="plusBtnT">+</button>
+          </div> -->
+        </div>
+      </div>
+      <br>
+    
+        <div style="border: 1px solid red; text-align: center;">
+          <form>
+            <div> <p>Select the letter you'd like to create for your plan:  
+            <select name="" id="list">
+                <option value="0">-Select-</option>
+                <option value="1">Letter S</option>
+                <option value="2">Letter M</option>
+                <option value="3">Letter A</option>
+                <option value="4">Letter R</option>
+                <option value="5">Letter T</option>
+              </select>
+            </p>
+            </div>
+            <textarea id="letterContent" cols="60" rows="4"></textarea>
+            <div>
+            <input id="saving" type="submit" value="Save">
+          </div>
+          </form>
+        </div>
+        <br>
+
+        <section id="letter-content-container" style="border: 1px solid blue;"></section>
+
+
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
